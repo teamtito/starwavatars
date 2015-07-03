@@ -65,8 +65,12 @@ class StarwavatarAvatar
     @complimentary_color ||= color.complement!
   end
 
+  def palette
+    @palette ||= Paleta::Palette.generate(:type => :shades, :from => :color, :size => 5, :color => color)
+  end
+
   def svg
-    Rails.application.assets.find_asset("star-wars-avatars/#{icon}.svg").pathname.read.gsub('#264A62', "##{color.hex}").gsub('#FFFFFF', "##{complimentary_color.hex}")
+    Rails.application.assets.find_asset("star-wars-avatars/#{icon}.svg").pathname.read.gsub('#264A62', "##{color.hex}").gsub('#FFFFFF', "##{palette[4].hex}")
   end
 
   def png
