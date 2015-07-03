@@ -61,8 +61,26 @@ class StarwavatarAvatar
     @color ||= Paleta::Color.new(:rgb, first_rgb, second_rgb, third_rgb)
   end
 
-  def complimentary_color
-    @complimentary_color ||= color.complement!
+  def shaded_color
+    palette[4]
+  end
+
+  def desaturated_color
+    @complimentary_color ||= color.desaturate
+  end
+
+  def complementary_color
+    @complimentary_color ||= color.complement
+  end
+
+  def inverted_color
+    @inverted_color ||= color.invert
+  end
+
+  def background_color
+    return shaded_color if color.similarity(shaded_color) > 0.1
+    return desaturated_color if color.similarity(desaturated_color) > 0.1
+    inverted_color
   end
 
   def palette
@@ -70,7 +88,9 @@ class StarwavatarAvatar
   end
 
   def svg
-    Rails.application.assets.find_asset("star-wars-avatars/#{icon}.svg").pathname.read.gsub('#264A62', "##{color.hex}").gsub('#FFFFFF', "##{palette[4].hex}")
+    Rails.application.assets.find_asset("star-wars-avatars/#{icon}.svg").
+      pathname.read.gsub('#264A62', "##{color.hex}").
+      gsub('#FFFFFF', "##{background_color.hex}")
   end
 
   def png
