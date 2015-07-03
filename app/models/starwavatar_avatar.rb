@@ -77,6 +77,24 @@ class StarwavatarAvatar
     @inverted_color ||= color.invert
   end
 
+  def lighten_degree
+    return 40 if color.lightness > 50
+    20
+  end
+
+  def darken_degree
+    return 40 if color.lightness < 50
+    20
+  end
+
+  def lightened_color
+    @lightened_color ||= color.lighten(lighten_degree)
+  end
+
+  def darkened_color
+    @darkened_color ||= color.darken(darken_degree)
+  end
+
   def background_color
     return shaded_color if color.similarity(shaded_color) > 0.1
     return desaturated_color if color.similarity(desaturated_color) > 0.1
@@ -87,10 +105,15 @@ class StarwavatarAvatar
     @palette ||= Paleta::Palette.generate(:type => :shades, :from => :color, :size => 5, :color => color)
   end
 
+  def foreground_color
+    return darkened_color if color.lightness > 20
+    lightened_color
+  end
+
   def svg
     Rails.application.assets.find_asset("star-wars-avatars/#{icon}.svg").
-      pathname.read.gsub('#264A62', "##{color.hex}").
-      gsub('#FFFFFF', "##{background_color.hex}")
+      pathname.read.gsub('#264A62', "##{foreground_color.hex}").
+      gsub('#FFFFFF', "##{color.hex}")
   end
 
   def png
