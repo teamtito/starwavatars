@@ -68,4 +68,9 @@ class StarwavatarAvatar
   def svg
     Rails.application.assets.find_asset("star-wars-avatars/#{icon}.svg").pathname.read.gsub('#264A62', "##{color.hex}").gsub('#FFFFFF', "##{complimentary_color.hex}")
   end
+
+  def png
+    list = Magick::Image.from_blob(svg) { self.format = 'SVG' }
+    list.first.to_blob { self.format = 'PNG' }
+  end
 end

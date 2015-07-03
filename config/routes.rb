@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get '/avatars/:id', to: 'star_wars_avatars#show', as: :avatar
+  get '/avatars/:id', to: 'star_wars_avatars#show', as: :avatar, defaults: {format: :svg}
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
