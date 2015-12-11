@@ -34,7 +34,8 @@ In theory, if you’re all set with Heroku, this should work:
 git clone git@github.com:teamtito/starwavatars.git
 cd starwavatars
 heroku create
-git push heroku```
+git push heroku
+```
 
 The app itself shouldn’t require much by way of resources to run, but if you’re going to use it in production, you’re going to want to put it in front of a CDN to make sure that requests for the same asset get cached and delivered from an edge endpoint. We use [Fastly](https://www.fastly.com) and it works great.
 
