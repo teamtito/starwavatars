@@ -42,3 +42,7 @@ The app itself shouldnâ€™t require much by way of resources to run, but if youâ€
 ## The Force is strong in my family
 
 Starwavatar is brought to you by [Team Tito](https://ti.to), with love and over-zealous fandom.
+
+## License
+
+The Starwavatars source code is released under the [MIT License](http://www.opensource.org/licenses/MIT).
