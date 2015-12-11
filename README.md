@@ -1,3 +1,5 @@
+![Starwavatars Sample](https://raw.githubusercontent.com/teamtito/starwavatars/master/starwavatars.png)
+
 # Starwavatar
 
 Inspired by [GitHub Identicons](https://github.com/blog/1586-identicons), the Force is strong with these randomly generated graphics.
