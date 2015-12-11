@@ -28,11 +28,12 @@ But you can pass a default value:
 
 If you set your warp drive co-ordinates to [Heroku](https://heroku.com), just upload this repo and you’re ready to go. If you want to play with the colors generated, everything happens in `app/models/starwavatar_avatar.rb` using the [Paleta gem](https://github.com/jordanstephens/paleta).
 
-In theory, if you’re all set with Heroku, this should work:
+In theory, if you’re all set with Heroku, Rails, bundler and git this should just work:
 
 ```sh
 git clone git@github.com:teamtito/starwavatars.git
 cd starwavatars
+bundle
 heroku create
 git push heroku
 ```
