@@ -1,0 +1,8 @@
+web:
+  build: .
+  command: bundle exec puma -C config/puma.rb
+  labels:
+    - convox.port.443.protocol=https
+  ports:
+  - 80:5000
+  - 443:5000
