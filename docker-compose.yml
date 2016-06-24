@@ -1,5 +1,4 @@
 web:
   build: .
-  command: sh /run.sh
   labels:
     - convox.port.443.protocol=https
