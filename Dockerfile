@@ -1,7 +1,10 @@
 FROM convox/rails
 
 RUN apt-get update
-RUN apt-get install -y imagemagick libmagickwand-dev
+RUN apt-get install -y imagemagick libmagickwand-dev curl tar
+
+RUN curl -s https://bin.equinox.io/c/jWahGASjoRq/backplane-stable-linux-amd64.tgz | tar -xzC /
+COPY run.sh /run.sh
 
 # copy only the files needed for bundle install
 # uncomment the vendor/cache line if you `bundle package` your gems
