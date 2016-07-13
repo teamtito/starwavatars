@@ -14,6 +14,7 @@ COPY Gemfile      /app/Gemfile
 COPY Gemfile.lock /app/Gemfile.lock
 # COPY vendor/cache /app/vendor/cache
 RUN bundle install
+RUN /backplane update
 
 # copy just the files needed for assets:precompile
 COPY Rakefile   /app/Rakefile
