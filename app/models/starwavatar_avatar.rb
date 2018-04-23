@@ -111,8 +111,8 @@ class StarwavatarAvatar
   end
 
   def svg
-    Rails.application.assets.find_asset("star-wars-avatars/#{icon}.svg").
-      pathname.read.gsub('#264A62', "##{foreground_color.hex}").
+    Pathname.new(Rails.root.join("app/assets/images/star-wars-avatars/#{icon}.svg")).
+      read.gsub('#264A62', "##{foreground_color.hex}").
       gsub('#FFFFFF', "##{color.hex}")
   end
 
