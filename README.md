@@ -6,7 +6,7 @@ Inspired by [GitHub Identicons](https://github.com/blog/1586-identicons), the Fo
 
 ## A New Hope, For Gravatar Fallbacks
 
-Starwavatar is very much a diminutive furry creature of a Rails app, containing only a single route `/avatars`. You can laser-blast any value to the end of that route and end in either `.svg` to return a SVG or `.png` to return a PNG.
+Starwavatar is very much a diminutive furry creature of a Go app, containing only a single route `/avatars`. You can laser-blast any value to the end of that route and end in either `.svg` to return a SVG or `.png` to return a PNG. Leave the ending off and you get the SVG.
 
 ## The Original Trilogy of Iconsets
 
@@ -26,19 +26,32 @@ But you can pass a default value:
 
 ## May the Starwavatar be with you: Deployment
 
-If you set your warp drive co-ordinates to [Heroku](https://heroku.com), just upload this repo and you’re ready to go. If you want to play with the colors generated, everything happens in `app/models/starwavatar_avatar.rb` using the [Paleta gem](https://github.com/jordanstephens/paleta).
+Starwavatar is one static Go binary with the icons baked in. It keeps no state, needs no database and has no dependencies outside Go's standard library, so there's nothing to install on the far side of the galaxy. It started life as a Rails app, and the Go version draws exactly the same avatars, byte for byte in SVG and within a shade on the anti-aliased edges in PNG.
 
-In theory, if you’re all set with Heroku, Rails, bundler and git this should just work:
+Build it for wherever it's going. For a 64-bit ARM Linux box:
 
 ```sh
-git clone git@github.com:teamtito/starwavatars.git
-cd starwavatars
-bundle
-heroku create
-git push heroku
+CGO_ENABLED=0 GOOS=linux GOARCH=arm64 go build -trimpath \
+  -ldflags "-s -w -X main.build=$(git rev-parse HEAD)" \
+  -o starwavatars-linux-arm64 .
 ```
 
-The app itself shouldn’t require much by way of resources to run, but if you’re going to use it in production, you’re going to want to put it in front of a CDN to make sure that requests for the same asset get cached and delivered from an edge endpoint. We use [Fastly](https://www.fastly.com) and it works great.
+We run it on [CARLOS](https://carloku.com), which starts it as `starwavatars --socket <path> --db <path>` and proxies HTTPS to that unix socket. The `--db` path is accepted and ignored. To try it on your own machine, give it an address instead:
+
+```sh
+go run . --addr 127.0.0.1:8080
+open http://127.0.0.1:8080/avatars/obiwan.png
+```
+
+It only listens on the address you name, so `:8080` and `0.0.0.0` are refused. `GET /up` answers `ok` and the commit it was built from.
+
+Every avatar is the same forever for a given URL, so responses carry a year-long `Cache-Control`. You're still going to want it behind a CDN, so requests for the same asset get cached and delivered from an edge endpoint. We use [CloudFront](https://aws.amazon.com/cloudfront/) and it works great.
+
+## Tuning the colours
+
+If you want to play with the colours generated, everything happens in `internal/avatar/avatar.go`, using a faithful Go port of the [Paleta gem](https://github.com/jordanstephens/paleta) in `internal/paleta`. The PNGs are drawn by a small rasterizer in `internal/raster` that knows just enough SVG for these icons.
+
+Bear in mind that every avatar already out there, in every Gravatar fallback, comes from that code. Change a colour and you change everyone's face. The tests hold the current avatars to goldens recorded from the original Rails service, and `go run ./cmd/compare` checks the code against a live Starwavatar host, so you'll know exactly how many faces you've changed.
 
 ## The Force is strong in my family
 
