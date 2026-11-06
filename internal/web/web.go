@@ -30,9 +30,11 @@ import (
 	"net/http"
 	"net/url"
 	"regexp"
+	"runtime"
 	"sort"
 	"strconv"
 	"strings"
+	"time"
 	"unicode/utf8"
 
 	"github.com/teamtito/starwavatars/internal/avatar"
@@ -62,12 +64,31 @@ var (
 
 // Handler serves Starwavatars. build is what /up reports.
 func Handler(build string) http.Handler {
-	return &handler{build: build}
+	return newHandler(build, max(2, runtime.NumCPU()), renderWait)
+}
+
+func newHandler(build string, slots int, wait time.Duration) *handler {
+	return &handler{build: build, renders: make(chan struct{}, slots), wait: wait}
 }
 
 type handler struct {
 	build string
+	// renders is one slot per PNG being drawn. Drawing is CPU and memory,
+	// and every distinct id is a fresh drawing, so a burst of them waits
+	// for a slot rather than piling up (Astra review, 2026-11-06).
+	renders chan struct{}
+	wait    time.Duration
 }
+
+// renderWait is how long a PNG request waits for a slot before it is told
+// to come back later. A CDN in front retries; a person sees a broken image
+// for one load at worst.
+const renderWait = 10 * time.Second
+
+// maxID is the longest id served. Real ones are md5s, 32 characters; the
+// cap stops an id near the server's header limit costing a drawing and a
+// filename that size.
+const maxID = 1024
 
 var avatarRoute = regexp.MustCompile(`^/avatars/([^/.?]+)(?:\.([^/.?]+))?$`)
 
@@ -104,6 +125,10 @@ func (h *handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		emptyError(w, http.StatusBadRequest)
 		return
 	}
+	if len(id) > maxID {
+		emptyError(w, http.StatusRequestURITooLong)
+		return
+	}
 
 	switch format {
 	case "svg":
@@ -114,6 +139,10 @@ func (h *handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		}
 		serveAvatar(w, r, "image/svg+xml; charset=utf-8", body)
 	case "png":
+		if !h.acquire(w, r) {
+			return
+		}
+		defer func() { <-h.renders }()
 		svg, err := avatar.New(id).SVG()
 		var body []byte
 		if err == nil {
@@ -128,6 +157,24 @@ func (h *handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		serveAvatar(w, r, "image/png", body)
 	default:
 		errorIn(w, http.StatusNotAcceptable, mimeByExtension[format])
+	}
+}
+
+// acquire takes a drawing slot, or answers for itself and says false: 503
+// with Retry-After when none came free in time, nothing when the client
+// gave up first.
+func (h *handler) acquire(w http.ResponseWriter, r *http.Request) bool {
+	t := time.NewTimer(h.wait)
+	defer t.Stop()
+	select {
+	case h.renders <- struct{}{}:
+		return true
+	case <-r.Context().Done():
+		return false
+	case <-t.C:
+		w.Header().Set("Retry-After", "5")
+		emptyError(w, http.StatusServiceUnavailable)
+		return false
 	}
 }
 
@@ -171,13 +218,15 @@ func etagMatches(header, etag string) bool {
 	return false
 }
 
-// headerSafe stops an id with control characters in it from breaking the
-// Content-Disposition header. Rails wrote such an id into the header as it
-// was, and Heroku's router answered 503 for the whole response; here they
+// headerSafe stops an id breaking the Content-Disposition header. Rails
+// wrote the id into the header as it was: a control character made
+// Heroku's router answer 503 for the whole response, and a quote let the
+// id close the filename and add parameters of its own (filename*=, Astra
+// review, 2026-11-06). Here control characters, quotes and backslashes
 // become underscores and the avatar is served. Tab was legal and stays.
 func headerSafe(id string) string {
 	return strings.Map(func(r rune) rune {
-		if (r < 0x20 && r != '\t') || r == 0x7f {
+		if (r < 0x20 && r != '\t') || r == 0x7f || r == '"' || r == '\\' {
 			return '_'
 		}
 		return r

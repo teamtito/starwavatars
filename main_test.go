@@ -91,3 +91,26 @@ func TestNonSocketIsLeftAlone(t *testing.T) {
 		t.Error("listened over a symlink")
 	}
 }
+
+// A socket that refuses us for any reason but "nobody is listening" is
+// left alone: it may be a live server we cannot reach.
+func TestAnUnreachableSocketIsLeftAlone(t *testing.T) {
+	if os.Geteuid() == 0 {
+		t.Skip("root reaches a socket whatever its mode")
+	}
+	path := filepath.Join(socketDir(t), "s")
+	l, err := net.Listen("unix", path)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer l.Close()
+	if err := os.Chmod(path, 0); err != nil {
+		t.Fatal(err)
+	}
+	if _, err := listen(path, ""); err == nil || !strings.Contains(err.Error(), "may be in use") {
+		t.Errorf("err = %v, want may be in use", err)
+	}
+	if _, err := os.Lstat(path); err != nil {
+		t.Errorf("the socket was removed: %v", err)
+	}
+}

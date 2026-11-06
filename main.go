@@ -42,24 +42,34 @@ func main() {
 		fmt.Fprintln(os.Stderr, "starwavatars:", err)
 		os.Exit(2)
 	}
+	// ReadTimeout covers a request whose body never arrives: the server
+	// waits to drain it before answering, and nothing else times that out
+	// (Astra review, 2026-11-06).
 	srv := &http.Server{
 		Handler:           web.Handler(build),
 		ReadHeaderTimeout: 10 * time.Second,
+		ReadTimeout:       30 * time.Second,
+		WriteTimeout:      60 * time.Second,
 		IdleTimeout:       2 * time.Minute,
 	}
 
 	ctx, stop := signal.NotifyContext(context.Background(), syscall.SIGINT, syscall.SIGTERM)
 	defer stop()
-	go func() {
-		<-ctx.Done()
-		shutdown, cancel := context.WithTimeout(context.Background(), 5*time.Second)
-		defer cancel()
-		srv.Shutdown(shutdown)
-	}()
-
+	errc := make(chan error, 1)
 	log.Printf("starwavatars %s serving on %s", build, l.Addr())
-	if err := srv.Serve(l); !errors.Is(err, http.ErrServerClosed) {
+	go func() { errc <- srv.Serve(l) }()
+
+	// Serve returns the moment the listener closes, so main waits on
+	// Shutdown, not on Serve: requests in flight get their five seconds.
+	select {
+	case err := <-errc:
 		log.Fatal(err)
+	case <-ctx.Done():
+	}
+	shutdown, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
+	if err := srv.Shutdown(shutdown); err != nil {
+		log.Printf("shutdown: %v", err)
 	}
 }
 
@@ -118,9 +128,16 @@ func clearStaleSocket(path string) error {
 	if fi.Mode().Type() != os.ModeSocket {
 		return fmt.Errorf("--socket %s exists and is not a socket; refusing to remove it", path)
 	}
-	if c, err := net.DialTimeout("unix", path, time.Second); err == nil {
+	// Only a refused dial proves nobody is there. A timeout can be a live
+	// server with a full backlog, and a permission error says nothing, so
+	// both are left alone (Astra review, 2026-11-06).
+	c, err := net.DialTimeout("unix", path, time.Second)
+	if err == nil {
 		c.Close()
 		return fmt.Errorf("--socket %s is in use by a running server", path)
+	}
+	if !errors.Is(err, syscall.ECONNREFUSED) {
+		return fmt.Errorf("--socket %s exists and may be in use (%v); refusing to remove it", path, err)
 	}
 	return os.Remove(path)
 }
