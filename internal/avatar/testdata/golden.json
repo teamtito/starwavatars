@@ -1,0 +1,522 @@
+[
+  {
+    "id": "c9242e7993ea8f594168dd128c1d1937",
+    "icon": "falcon",
+    "rect_fill": "AED87F",
+    "path_fill": "7CB838",
+    "svg_length": 5069,
+    "svg_sha256": "4d6e8e186c91a05613cf55e39b0a163c7471ccaeabc75000efe0a7c8ed922e4f"
+  },
+  {
+    "id": "1a6461e45097ac535f218b987b3acc22",
+    "icon": "r2d2",
+    "rect_fill": "7BD453",
+    "path_fill": "4A9A26",
+    "svg_length": 3132,
+    "svg_sha256": "8807579bf19e3a1212cf0c146910b3f5158682d84d857e36d18ba5a65ff28a4c"
+  },
+  {
+    "id": "7949f7d1acf491257780e85768093e6a",
+    "icon": "akbar",
+    "rect_fill": "43A793",
+    "path_fill": "081512",
+    "svg_length": 5010,
+    "svg_sha256": "1cd9221a1f337b1cb4b096986b8014e1ef1953bd341ab6f9f1d8b53e16335577"
+  },
+  {
+    "id": "b0b010641811ffbe1107bb968a017425",
+    "icon": "deathstar",
+    "rect_fill": "555558",
+    "path_fill": "254962",
+    "svg_length": 2542,
+    "svg_sha256": "44e982fc9d0fecfc6e7755acba160c264049bbeaceb39e04d3e31a8c741ee031"
+  },
+  {
+    "id": "11e16c0ac22b5613fc0db3349b3379f4",
+    "icon": "c3po",
+    "rect_fill": "D66D4E",
+    "path_fill": "9A3E23",
+    "svg_length": 5787,
+    "svg_sha256": "2749a28cb38402f14bbd5232a328a9ba2704784f215762303baafc420345c3fc"
+  },
+  {
+    "id": "eb84016d418ad1b2186b643287ca9bbe",
+    "icon": "yoda",
+    "rect_fill": "64F280",
+    "path_fill": "12DD3A",
+    "svg_length": 4883,
+    "svg_sha256": "3a418b99284e8fe4aaacf4ee8525db6ec8700592dbde05e1f4c1288acb6abcd7"
+  },
+  {
+    "id": "accf8331907f722b361cf18b1855dade",
+    "icon": "stormtrooper",
+    "rect_fill": "597FFC",
+    "path_fill": "0439EA",
+    "svg_length": 5939,
+    "svg_sha256": "14cc296d4f62383449b37d21dd3607e546880d93033355da8e5b7a83ccfafce2"
+  },
+  {
+    "id": "76f1b12634184703450e543b338e2111",
+    "icon": "leia",
+    "rect_fill": "225EB3",
+    "path_fill": "010307",
+    "svg_length": 1831,
+    "svg_sha256": "41ac6ab63623b64615442d75dd78e03304120723fd2c19b04664263ad6f47890"
+  },
+  {
+    "id": "4c87528cb525ee8ee861bb622368b557",
+    "icon": "atat",
+    "rect_fill": "C29C24",
+    "path_fill": "151104",
+    "svg_length": 6227,
+    "svg_sha256": "887c967fe89ce3c3353353a087fcbf2b66e05648f17673cb9ede4573ae5103f1"
+  },
+  {
+    "id": "7514bd76bb8af66907afea6ec29c988b",
+    "icon": "darth",
+    "rect_fill": "EA31EE",
+    "path_fill": "A70EAA",
+    "svg_length": 4672,
+    "svg_sha256": "3962bb2791a34b11f73970609ed731214863cd4cd134a85e402ffc09af802f3e"
+  },
+  {
+    "id": "ef92b00563d66af3be8f4677e157c5e4",
+    "icon": "chewie",
+    "rect_fill": "44B0E9",
+    "path_fill": "147BB2",
+    "svg_length": 6013,
+    "svg_sha256": "2016d8a1639f5112c2400c25864953cbc489043af6b6a8573ff8ef92647b5460"
+  },
+  {
+    "id": "4f9d491a028ef04baf0413ea92fd7802",
+    "icon": "boba",
+    "rect_fill": "7DED54",
+    "path_fill": "44C614",
+    "svg_length": 2441,
+    "svg_sha256": "81e9d1c6a797f9b4ebc3c749fd800e69baae56c973e8e27a966915dfe2e32f15"
+  },
+  {
+    "id": "afb93850daa4738988f640a0b14b9fde",
+    "icon": "lightsaber",
+    "rect_fill": "B30960",
+    "path_fill": "000000",
+    "svg_length": 2986,
+    "svg_sha256": "cbe643aba47b9562b0548c4b2fa63524f786ede23a6df6e1c5fad27ab5257776"
+  },
+  {
+    "id": "d7ed598e2a90fe1a9dc43a2ff8df80c4",
+    "icon": "xwing",
+    "rect_fill": "18F495",
+    "path_fill": "079E5D",
+    "svg_length": 7933,
+    "svg_sha256": "3773c4817ebfd657a1f76c8cb1cc2f839618372d175bbd792e9d0651d0c1a607"
+  },
+  {
+    "id": "05103f67ef17f0a2fe879b213ad98772",
+    "icon": "atat",
+    "rect_fill": "0B6E53",
+    "path_fill": "000000",
+    "svg_length": 6227,
+    "svg_sha256": "4cb266df5ed41300ac6914ebec5d842d5f8a426f73926f19dae5fe9636ae07e0"
+  },
+  {
+    "id": "389a2060a95dbb1b971fb826a43862fb",
+    "icon": "chewie",
+    "rect_fill": "1D2682",
+    "path_fill": "000000",
+    "svg_length": 6013,
+    "svg_sha256": "9f2f6c143c80f1a4be48c7ddffa74fce0b6d1ea4ae535fbfad0508a2c29d8c47"
+  },
+  {
+    "id": "e1a152c51e0d0dbd5e19addd5dbbd00d",
+    "icon": "lightsaber",
+    "rect_fill": "C8DFC2",
+    "path_fill": "8BBB7F",
+    "svg_length": 2986,
+    "svg_sha256": "42ae5fb59903c8c1af8755c480ae1ae4be108ff8c8173e7cedf6c3562f1363f1"
+  },
+  {
+    "id": "2c3b5f3a5a248627b7a8a533835d882c",
+    "icon": "stormtrooper",
+    "rect_fill": "0961D3",
+    "path_fill": "00070F",
+    "svg_length": 5939,
+    "svg_sha256": "a7494ea0302e2aa19c5c6c96a623a39eb24c4165c9504151e85bf9b73e0703b9"
+  },
+  {
+    "id": "41028246106edfc585f21b083f68c636",
+    "icon": "lightsaber",
+    "rect_fill": "8A6F5C",
+    "path_fill": "0F0C0A",
+    "svg_length": 2986,
+    "svg_sha256": "191a341d80083b9bf1703e064e7786df624cf25b2beee807d0e11ca34dd83bb9"
+  },
+  {
+    "id": "66894c396ea87db5a74bbd3f4732bb57",
+    "icon": "stormtrooper",
+    "rect_fill": "236600",
+    "path_fill": "45CC00",
+    "svg_length": 5939,
+    "svg_sha256": "4f9c122535fc6b251f16a2651de2a782f2093c3a32fc6d052f6eb88aacb85faf"
+  },
+  {
+    "id": "33971033cae3eede5ef7e24638d3c977",
+    "icon": "boba",
+    "rect_fill": "063D6D",
+    "path_fill": "000000",
+    "svg_length": 2441,
+    "svg_sha256": "7e3915d4df858e815105e940914eacecf335e6374c6f369023070b701e2aeb0a"
+  },
+  {
+    "id": "d65652fd72cf5f4add9cd5db6ed6d364",
+    "icon": "akbar",
+    "rect_fill": "9E3514",
+    "path_fill": "000000",
+    "svg_length": 5010,
+    "svg_sha256": "51d94e50f85842f748eabf0f9385edd2757962c9cf434e4095e7a2c3da6a5e33"
+  },
+  {
+    "id": "27eef8ae1ed0f15f1002de647f48a014",
+    "icon": "atat",
+    "rect_fill": "4CFAD7",
+    "path_fill": "06D9AF",
+    "svg_length": 6227,
+    "svg_sha256": "7e62681d40a2584c1dbbdc7db3049e8010b2e861de1f38694549a366ceabe6f8"
+  },
+  {
+    "id": "d4b4a87411fb7c133df69689567e31f2",
+    "icon": "r2d2",
+    "rect_fill": "2CC2A0",
+    "path_fill": "061B16",
+    "svg_length": 3132,
+    "svg_sha256": "146bae770f38bcd06393b276e90ea3e9511070c343a8b3ce2c3fcd49a25a6e33"
+  },
+  {
+    "id": "e6fc7fa2bf6c8c586d209cf28e591428",
+    "icon": "c3po",
+    "rect_fill": "874BF2",
+    "path_fill": "510EC8",
+    "svg_length": 5787,
+    "svg_sha256": "73e30ba8a543fc15e9976cd99881748bcf617511fb9ba31f17228f29bf0ab7e5"
+  },
+  {
+    "id": "0155e23bb5a43d338bef52e891c2d479",
+    "icon": "lightsaber",
+    "rect_fill": "AED986",
+    "path_fill": "7ABD3B",
+    "svg_length": 2986,
+    "svg_sha256": "ffe14aacf9f8569f2f07788a2be7c375ef4c68a2bb20167f86d417595047e9f4"
+  },
+  {
+    "id": "8330246e27ecb7df0131c56179b974ac",
+    "icon": "falcon",
+    "rect_fill": "842DCC",
+    "path_fill": "170824",
+    "svg_length": 5069,
+    "svg_sha256": "58ecb7e5038dee87da1208c6463bbfc4e019dd285f3117652efc53bf390a9a30"
+  },
+  {
+    "id": "35687c3a8aaa515b0c27467b6070f130",
+    "icon": "r2d2",
+    "rect_fill": "C6C5C1",
+    "path_fill": "95938B",
+    "svg_length": 3132,
+    "svg_sha256": "e1eab11dbef78b0902bb10d07f0da4539d99a9381cd816ae3eae56a20ca06a35"
+  },
+  {
+    "id": "15e205cc9b6bebb13b0e587ba5ec2e78",
+    "icon": "stormtrooper",
+    "rect_fill": "E4F17B",
+    "path_fill": "D1E71E",
+    "svg_length": 5939,
+    "svg_sha256": "39127b792cb116bb69509cf474ac9403d2c9c85cc0e76a0d6e4dc5e075c02694"
+  },
+  {
+    "id": "059c2125c8e1e17a16242a4585d3d30b",
+    "icon": "xwing",
+    "rect_fill": "215131",
+    "path_fill": "000000",
+    "svg_length": 7933,
+    "svg_sha256": "978b7ec9ac72d719d03a3d8f69121acc57029b0020b11366dfa581fbb3f00e7c"
+  },
+  {
+    "id": "835459f46d14ae69fcaa211711852742",
+    "icon": "leia",
+    "rect_fill": "C4B1F0",
+    "path_fill": "835BDF",
+    "svg_length": 1831,
+    "svg_sha256": "1f353825873d40b034e4967c515cde64910288af907178ecc110a30fa3a76a94"
+  },
+  {
+    "id": "4222730ebfc9baefc39a03e7b660e6d0",
+    "icon": "stormtrooper",
+    "rect_fill": "32F9C4",
+    "path_fill": "05BF8D",
+    "svg_length": 5939,
+    "svg_sha256": "738caefb601290bb749c125c7b5a8dbe5b933dd664382627abc1b1e89b739e52"
+  },
+  {
+    "id": "7cee3ee88cae771b9106f0158ea87c3c",
+    "icon": "boba",
+    "rect_fill": "085134",
+    "path_fill": "11AD6F",
+    "svg_length": 2441,
+    "svg_sha256": "16d70e5630089491f9f60c0c0081f643fa3a65bca14f9b2d26032b645ab335bd"
+  },
+  {
+    "id": "754bf045e20e96aa7ccc0547f1edebd8",
+    "icon": "lightsaber",
+    "rect_fill": "7BD669",
+    "path_fill": "43AA2E",
+    "svg_length": 2986,
+    "svg_sha256": "f7902b5e4b76990405498e2b1eb16b4e5928f11b43016c6de78562506a35ece6"
+  },
+  {
+    "id": "2452c8b345f47b0f725468fd4e7e8e53",
+    "icon": "r2d2",
+    "rect_fill": "874BF8",
+    "path_fill": "4F08D4",
+    "svg_length": 3132,
+    "svg_sha256": "6dbec684f5f59306f985e838a5a71a4a1ecd8756b1156c421a4a7d5d9a0a1127"
+  },
+  {
+    "id": "0a0194564985b68e27b9f3846e43c810",
+    "icon": "boba",
+    "rect_fill": "10A794",
+    "path_fill": "000000",
+    "svg_length": 2441,
+    "svg_sha256": "d648368f5d5477366a86b562e959b47a6f1d9a7f192a9d1b852e7f232a32c68a"
+  },
+  {
+    "id": "9fe541f00d1d53bce06e47e92c6e7830",
+    "icon": "lightsaber",
+    "rect_fill": "AFDCA2",
+    "path_fill": "6FC057",
+    "svg_length": 2986,
+    "svg_sha256": "6fc77da0cf8923e061dede04555112159ff80488af3f4631eb3d1cc72d9edc61"
+  },
+  {
+    "id": "14a7718c595dd3f444acc55f76d37f83",
+    "icon": "c3po",
+    "rect_fill": "ACC5BF",
+    "path_fill": "6F9B90",
+    "svg_length": 5787,
+    "svg_sha256": "d3622983dbb04a0a9e8cd023fd73c41c385ae5f2aeeffb1cdd866dba5792ded0"
+  },
+  {
+    "id": "863eec7f0cff5f2f24c30fea32344613",
+    "icon": "lightsaber",
+    "rect_fill": "000000",
+    "path_fill": "333333",
+    "svg_length": 2986,
+    "svg_sha256": "9d684d8ece4b68baa63c9573294d61f2e29b09d75314a86c00118faa5847a64b"
+  },
+  {
+    "id": "d6a36bb6373a7a6676c5d173cfd1801a",
+    "icon": "r2d2",
+    "rect_fill": "717171",
+    "path_fill": "0A0A0A",
+    "svg_length": 3132,
+    "svg_sha256": "e08b398d9370d057284509eb8066d7cea1b53c4813b8352ad21926e856248584"
+  },
+  {
+    "id": "8f706e4fb12d0b870c5b097fb819f185",
+    "icon": "c3po",
+    "rect_fill": "A9A9A9",
+    "path_fill": "757575",
+    "svg_length": 5787,
+    "svg_sha256": "951180e4ca15594b8d0d5c5042d2e23515d3a243eac0b7b1013de53e93156dc7"
+  },
+  {
+    "id": "abc",
+    "icon": "falcon",
+    "rect_fill": "24716F",
+    "path_fill": "000000",
+    "svg_length": 5069,
+    "svg_sha256": "4774c371f19284d376cdd7d63b947ae7713401475790ad1b846375e1df467331"
+  },
+  {
+    "id": "a/b",
+    "icon": "stormtrooper",
+    "rect_fill": "5A91AF",
+    "path_fill": "35596D",
+    "svg_length": 5939,
+    "svg_sha256": "dcba277b9463d327ce7087b7a422f6caaec930bb06c475081079db32a4cf6920"
+  },
+  {
+    "id": "a.png",
+    "icon": "boba",
+    "rect_fill": "B62365",
+    "path_fill": "0A0206",
+    "svg_length": 2441,
+    "svg_sha256": "1aaafdf6922d75105cadc7478668a5e5800daed500abb5e1e6febef48acef2c8"
+  },
+  {
+    "id": "a+b",
+    "icon": "akbar",
+    "rect_fill": "6A2ED5",
+    "path_fill": "3F1A82",
+    "svg_length": 5010,
+    "svg_sha256": "14ce88eb970932851fcad7df7f77d6d06e8281642bf884ea207aa3c5a6e3a7f9"
+  },
+  {
+    "id": "é",
+    "icon": "leia",
+    "rect_fill": "C9E608",
+    "path_fill": "1C2001",
+    "svg_length": 1831,
+    "svg_sha256": "d9eec470d066a986cf76935be3fad52df3a0ed99613d3b65398b42a2f85b2a65"
+  },
+  {
+    "id": "\u0000",
+    "icon": "yoda",
+    "rect_fill": "BD6F63",
+    "path_fill": "824137",
+    "svg_length": 4883,
+    "svg_sha256": "4a103279cffa748384498c48540abe96bd3d6cdab6efd3a7b65a4f6eb84694ee"
+  },
+  {
+    "id": "a b",
+    "icon": "deathstar",
+    "rect_fill": "77ACC5",
+    "path_fill": "254962",
+    "svg_length": 2542,
+    "svg_sha256": "d0caca6d18ad652bdf09a92110c29f64586e644edaa33e2f05437e01f13cdf7a"
+  },
+  {
+    "id": "a?b",
+    "icon": "c3po",
+    "rect_fill": "502470",
+    "path_fill": "000000",
+    "svg_length": 5787,
+    "svg_sha256": "a44b9cf00c71e52a28e7b880ba8605d91ff0bfceb264246aa62b958fcb9afb6d"
+  },
+  {
+    "id": "a%",
+    "icon": "r2d2",
+    "rect_fill": "A68A6E",
+    "path_fill": "6B5742",
+    "svg_length": 3132,
+    "svg_sha256": "c3040eb18418c544190581f3ac2db6cb8562de89b4f660a5756546b541a9f530"
+  },
+  {
+    "id": "x",
+    "icon": "yoda",
+    "rect_fill": "AED988",
+    "path_fill": "79BE3C",
+    "svg_length": 4883,
+    "svg_sha256": "d52e91832470e782ad554dc9f60457886df81e9108a105506d38f819e8b08626"
+  },
+  {
+    "id": "0",
+    "icon": "lightsaber",
+    "rect_fill": "0D8641",
+    "path_fill": "000000",
+    "svg_length": 2986,
+    "svg_sha256": "a6fc7137ec8dc6e0a2492f903ed5cda083d2ad8a28afec215f4bc9825e1ad0d4"
+  },
+  {
+    "id": "Ünïcödé 🚀",
+    "icon": "c3po",
+    "rect_fill": "96E4F2",
+    "path_fill": "3BCCE6",
+    "svg_length": 5787,
+    "svg_sha256": "19f5d0013b4c1bfc5892991f66597fa87cfd2d27dbdf13273565fc32720d4cf2"
+  },
+  {
+    "id": "日本語のアバター",
+    "icon": "darth",
+    "rect_fill": "1F3F7D",
+    "path_fill": "000000",
+    "svg_length": 4672,
+    "svg_sha256": "4e5c2ae03be20f6598071a8e2e4a692fb5b9438ebcf5786acc5d72fac8122c50"
+  },
+  {
+    "id": "A3F1C2D4E5B6A7980F1E2D3C4B5A6978",
+    "icon": "boba",
+    "rect_fill": "C3ACC0",
+    "path_fill": "987093",
+    "svg_length": 2441,
+    "svg_sha256": "1695c1c9c906a9cfc5d1d9e5990c803f5d74e462f4d8e02e9259ede9bdd653cc"
+  },
+  {
+    "id": "a\tb",
+    "icon": "boba",
+    "rect_fill": "CBF6AA",
+    "path_fill": "92EC4D",
+    "svg_length": 2441,
+    "svg_sha256": "69ae8d6832d0d898dd8b6e92dd193ebd03522e6cfec07192067bfb85cb55574b"
+  },
+  {
+    "id": "semi;colon",
+    "icon": "falcon",
+    "rect_fill": "748E91",
+    "path_fill": "465658",
+    "svg_length": 5069,
+    "svg_sha256": "bd70e065259d8a21de3e9c521cf0076981b51ca6dcecce4135319b170bb24ae5"
+  },
+  {
+    "id": "comma,s",
+    "icon": "falcon",
+    "rect_fill": "2DC5BA",
+    "path_fill": "071E1D",
+    "svg_length": 5069,
+    "svg_sha256": "6c1e2677c93ebc4c28c57d9284c64784941a25891e5ce78b6aea3e339f94bafd"
+  },
+  {
+    "id": "quote\"d",
+    "icon": "falcon",
+    "rect_fill": "6D48D4",
+    "path_fill": "402293",
+    "svg_length": 5069,
+    "svg_sha256": "879c1d7288f6524799a6954bea3a4d09d09dad37e9463a6b903e03d27c0b5806"
+  },
+  {
+    "id": "trailing-dash-",
+    "icon": "yoda",
+    "rect_fill": "555771",
+    "path_fill": "000000",
+    "svg_length": 4883,
+    "svg_sha256": "c7545c82e284fff6e4ddda09aa8f78a678ab114d07e76ec048c9a9c5c3aba0dd"
+  },
+  {
+    "id": "1234567890",
+    "icon": "boba",
+    "rect_fill": "214D07",
+    "path_fill": "49AA0F",
+    "svg_length": 2441,
+    "svg_sha256": "c45f0bb95bce8b503114899586a82fe6c1140f9b36d289b83bf81d58d396e58a"
+  },
+  {
+    "id": "∞",
+    "icon": "r2d2",
+    "rect_fill": "7493CA",
+    "path_fill": "3B5E9C",
+    "svg_length": 3132,
+    "svg_sha256": "434081bf362177d1361bb180086bd361645399fc832da6b51b1a8bb0e8844964"
+  },
+  {
+    "id": "abc/def/ghi",
+    "icon": "chewie",
+    "rect_fill": "214F19",
+    "path_fill": "000000",
+    "svg_length": 6013,
+    "svg_sha256": "af6e15f69d766b8e4d42a805f39e7617b067c36cfdca3efb3748933236eccc21"
+  },
+  {
+    "id": "under_score~tilde",
+    "icon": "akbar",
+    "rect_fill": "8D8960",
+    "path_fill": "13130D",
+    "svg_length": 5010,
+    "svg_sha256": "19cbb2f30059a24c92d018ebc052c2c17fbae51f31307c128096a00065793c8d"
+  },
+  {
+    "id": "longlonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglonglong",
+    "icon": "leia",
+    "rect_fill": "408965",
+    "path_fill": "000000",
+    "svg_length": 1831,
+    "svg_sha256": "08a8c65492162d7f3f98d29b1562957cffd833e09bba2d943c6aaa886acaed16"
+  }
+]
